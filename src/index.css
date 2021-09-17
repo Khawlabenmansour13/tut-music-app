@@ -25,7 +25,7 @@ body {
   box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset 6px 6px 12px rgba(255, 255, 255, 0.4);
 }
 
-.c-player > h1 {
+.c-player > h4 {
   color: #FFF;
   font-size: 14px;
   text-transform: uppercase;
