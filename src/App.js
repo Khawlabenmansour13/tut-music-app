@@ -32,16 +32,24 @@ function App() {
   const [currentSongIndex, setCurentSongIndex]= useState(0);
   const [nextSongIndex, setNextSongIndex]= useState(currentSongIndex + 1);
   
+  useEffect(() => {
+    setNextSongIndex(() => {
+      if (currentSongIndex + 1 > songs.length - 1) {
+        return 0;
 
-  
-  
-  
-  
-  
-  return (
+      } else {
+
+        return currentSongIndex + 1;
+      }
+    });
+  }, [currentSongIndex]);
+ return (
     <div className="App">
-      <Player  song={songs[currentSongIndex]}
-                nextSong={songs[nextSongIndex]}
+      <Player  
+       currentSongIndex={currentSongIndex} 
+       setCurrentSongIndex={setCurrentSongIndex} 
+       nextSongIndex={nextSongIndex} 
+       songs={songs}
       />
     </div>
   );
